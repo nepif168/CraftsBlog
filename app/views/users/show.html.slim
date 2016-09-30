@@ -1,0 +1,7 @@
+h1 =@user.email
+
+- @blogs.each do |blog|
+  li
+    = link_to blog.title, blog_path(blog)
+    
+= link_to "お気に入り一覧", favorites_user_path(@user)

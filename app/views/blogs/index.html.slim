@@ -1,0 +1,7 @@
+h1 Crafts Blog
+= link_to "ユーザー一覧", users_path 
+br
+= link_to "新規投稿", new_blog_path 
+
+- @blogs.each do |blog| 
+  li = link_to blog.title, :controller => "blogs", :action => "show", :id => blog.id

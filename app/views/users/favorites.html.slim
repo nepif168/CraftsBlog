@@ -1,0 +1,13 @@
+- if @user==current_user
+  h2 自分のお気に入り一覧
+- else
+  h2 #{@user.email}さんのお気に入り一覧
+
+- @user.favorites.map { |f| f.blog }.each do |blog|
+  li 
+    = link_to blog.title, blog_path(blog)
+
+- if @user==current_user
+  = link_to '自分の投稿にもどる', user_path(@user)
+- else    
+  = link_to @user.email+'さんの投稿にもどる', user_path(@user)
